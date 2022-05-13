@@ -1,12 +1,12 @@
 import React from "react";
-import "./App.css";
-import CardList from "./components/CardList";
+import Game from "./components/Game";
+import { GameProvider } from "./contexts/GameContext";
 
 function App() {
 	return (
-		<div className="app">
-			<CardList />
-		</div>
+		<GameProvider>
+			<Game />	
+		</GameProvider>
 	);
 }
 

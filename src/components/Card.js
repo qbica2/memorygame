@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, {useState} from "react";
 import style from "../styles/card.module.scss";
 import QuestionMark from "../constants/icons/QuestionMark";

@@ -6,7 +6,7 @@ import style from "../styles/cardlist.module.scss";
 
 function CardList() {
 	return (
-		<div className={style.container}>
+		<div className={`${style.container} ${style.hard}`}>
 			{
 				cardArray.map((card) =>(
 					<Card key={card.id} id={card.id} image={card.image} />
