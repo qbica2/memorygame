@@ -1,8 +1,6 @@
 .container{
 	padding-left: 20px;
 	padding-top: 20px;
-	width: 800px;
-	height: 800px;
 	background-color: #f5f2ec;
 	border-radius: 10px;
 	display: flex;
@@ -11,4 +9,16 @@
 	justify-content: flex-start;
 	align-content: flex-start;
 	align-items:center;
+	&.hard{
+		width: 800px;
+		height: 670px;
+	}
+	&.medium{
+		width: 540px;
+		height: 670px;
+	}
+	&.easy{
+		width: 410px;
+		height: 540px;
+	}
 }
