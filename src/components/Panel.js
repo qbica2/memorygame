@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import GameContext from "../contexts/GameContext";
 import style from "../styles/panel.module.scss";
 
 function Panel() {
+	const { panelDifficulty, handleDifficultyChange } = useContext(GameContext);
+	
 	return (
 		<div className={style.panel}>
 			<div className={style.content}>
@@ -17,9 +20,9 @@ function Panel() {
 				<div className={style.difficulty}>
 					<div className={style.title}>Select Difficulty</div>
 					<div className={style.buttons}>
-						<button className={style.notSelected}>Easy</button>
-						<button className={style.notSelected}>Medium</button>
-						<button>Hard</button>
+						<button className={panelDifficulty === "easy" ? "" : style.notSelected } onClick={()=>handleDifficultyChange({type: "easy"})}>Easy</button>
+						<button className={panelDifficulty === "medium" ? "" : style.notSelected } onClick={()=>handleDifficultyChange({type: "medium"})}>Medium</button>
+						<button className={panelDifficulty === "hard" ? "" : style.notSelected } onClick={()=>handleDifficultyChange({type: "hard"})}>Hard</button>
 					</div>
 				</div>
 				<div className={style.mode}>

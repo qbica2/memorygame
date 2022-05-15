@@ -5,10 +5,21 @@ const GameContext = createContext();
 
 export const GameProvider = ({ children }) => {
 	const [isPanelOpen, setIsPanelOpen] = useState(true);
+	const [panelDifficulty, setPanelDifficulty] = useState("");
+
+	const handleDifficultyChange = (value) => {
+		if(value.type===panelDifficulty) {
+			setPanelDifficulty("");
+		}else {
+			setPanelDifficulty(value.type);
+		}
+	};
 
 	const values ={
 		isPanelOpen,
-		setIsPanelOpen
+		setIsPanelOpen,
+		panelDifficulty,
+		handleDifficultyChange
 	};
 
 	return (
