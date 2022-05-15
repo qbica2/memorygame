@@ -11,14 +11,14 @@
 	align-items:center;
 	&.hard{
 		width: 800px;
-		height: 670px;
+		height: 540px;
 	}
 	&.medium{
-		width: 540px;
-		height: 670px;
+		width: 670px;
+		height: 540px;
 	}
 	&.easy{
-		width: 410px;
-		height: 540px;
+		width: 540px;
+		height: 410px;
 	}
 }
