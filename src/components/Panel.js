@@ -3,7 +3,7 @@ import GameContext from "../contexts/GameContext";
 import style from "../styles/panel.module.scss";
 
 function Panel() {
-	const { panelDifficulty, handleDifficultyChange, panelMode, handleModeChange } = useContext(GameContext);
+	const { panelDifficulty, handleDifficultyChange, panelMode, handleModeChange, handleStart, loading, countDown } = useContext(GameContext);
 	
 	return (
 		<div className={style.panel}>
@@ -32,9 +32,13 @@ function Panel() {
 						<button className={panelMode === "teams" ? "" : style.notSelected } onClick={()=>handleModeChange({type: "teams"})}>Teams</button>
 					</div>
 				</div>
-				
-				<button className={style.start}>Start</button>
-				
+
+				<button className={style.start} onClick={()=>handleStart()}>
+					{
+						loading ? `Loading... ${countDown}` : "Start" 
+					}
+				</button>
+	
 			</div>
 		</div>
 	);
