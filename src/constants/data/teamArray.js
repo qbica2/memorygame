@@ -27,94 +27,117 @@ const teamArray = [
 	{
 		image: arsenal,
 		name: "Arsenal",
+		status: false,
 	},
 	{
 		image: astonvilla,
 		name: "Aston Villa",
+		status: false,
 	},
 	{
 		image: bournemouth,
 		name: "Bournemouth",
+		status: false,
 	},
 	{
 		image: chelsea,
 		name: "Chelsea",
+		status: false,
 	},
 	{
 		image: crystalpalace,
 		name: "Crystal Palace",
+		status: false,
 	},
 	{
 		image: everton,
 		name: "Everton",
+		status: false,
 	},
 	{
 		image: fulham,
 		name: "Fulham",
+		status: false,
 	},
 	{
 		image: leeds,
 		name: "Leeds",
+		status: false,
 	},
 	{
 		image: leicester,
 		name: "Leicester",
+		status: false,
 	},
 	{
 		image: liverpool,
 		name: "Liverpool",
+		status: false,
 	},
 	{
 		image: mancity,
 		name: "Manchester City",
+		status: false,
 	},
 	{
 		image: manutd,
 		name: "Manchester United",
+		status: false,
 	},
 	{
 		image: middle,
 		name: "Middlesbrough",
+		status: false,
 	},
 	{
 		image: newcastle,
 		name: "Newcastle",
+		status: false,
 	},
 	{
 		image: norwich,
 		name: "Norwich",
+		status: false,
 	},
 	{
 		image: sheffield,
 		name: "Sheffield",
+		status: false,
 	},
 	{
 		image: southampton,
 		name: "Southampton",
+		status: false,
 	},
 	{
 		image: sunderland,
 		name: "Sunderland",
+		status: false,
 	},
 	{
 		image: swansea,
 		name: "Swansea",
+		status: false,
 	},
 	{
 		image: tottenham,
 		name: "Tottenham",
+		status: false,
 	},
 	{
 		image: watford,
 		name: "Watford",
+		status: false,
 	},
 	{
 		image: westbrom,
 		name: "West Brom",
+		status: false,
 	},
 	{
 		image: westham,
 		name: "West Ham",
+		status: false,
 	},
 ];
 

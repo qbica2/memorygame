@@ -17,6 +17,7 @@ export const GameProvider = ({ children }) => {
 	const [countDown, setCountDown] = useState(5);
 	const [loading, setLoading] = useState(false);
 	const [cardList, setCardList] = useState([]);
+	const [attemps, setAttemps] = useState(0);
 
 
 	useEffect(() => {
@@ -37,41 +38,38 @@ export const GameProvider = ({ children }) => {
 				setGameDifficulty(panelDifficulty);
 				setGameMode(panelMode);
 				if(panelMode === "brands") {
+					let selectedArray = [];
 					if(panelDifficulty === "easy") {
 						setGameTime(30);
-						const selectedArray = randomBrandArray.slice(0,6);
-						const newArr = [...selectedArray, ...selectedArray];
-						setCardList(newArr.sort(() => 0.5 - Math.random()));
+						selectedArray = randomBrandArray.slice(0,6);
 					} else if(panelDifficulty === "medium") {
 						setGameTime(60);
-						const selectedArray = randomBrandArray.slice(0,10);
-						const newArr = [...selectedArray, ...selectedArray];
-						setCardList(newArr.sort(() => 0.5 - Math.random()));
+						selectedArray = randomBrandArray.slice(0,10);
 					}
 					else if(panelDifficulty === "hard") {
 						setGameTime(90);
-						const selectedArray = randomBrandArray.slice(0,12);
-						const newArr = [...selectedArray, ...selectedArray];
-						setCardList(newArr.sort(() => 0.5 - Math.random()));
+						selectedArray = randomBrandArray.slice(0,12);
 					}
+					const newArr = [...selectedArray, ...selectedArray];
+					const newArrWithId = newArr.map(item => ({...item, id: Math.random()}));
+					setCardList(newArrWithId.sort(() => 0.5 - Math.random()));
+
 				} else if(panelMode === "teams") {
+					let selectedArray = [];
 					if(panelDifficulty === "easy") {
 						setGameTime(30);
-						const selectedArray = randomTeamArray.slice(0,6);
-						const newArr = [...selectedArray, ...selectedArray];
-						setCardList(newArr.sort(() => 0.5 - Math.random()));
+						selectedArray = randomTeamArray.slice(0,6);
 					} else if(panelDifficulty === "medium") {
 						setGameTime(60);
-						const selectedArray = randomTeamArray.slice(0,10);
-						const newArr = [...selectedArray, ...selectedArray];
-						setCardList(newArr.sort(() => 0.5 - Math.random()));
+						selectedArray = randomTeamArray.slice(0,10);
 					}
 					else if(panelDifficulty === "hard") {
 						setGameTime(90);
-						const selectedArray = randomTeamArray.slice(0,12);
-						const newArr = [...selectedArray, ...selectedArray];
-						setCardList(newArr.sort(() => 0.5 - Math.random()));
+						selectedArray = randomTeamArray.slice(0,12);
 					}
+					const newArr = [...selectedArray, ...selectedArray];
+					const newArrWithId = newArr.map(item => ({...item, id: Math.random()}));
+					setCardList(newArrWithId.sort(() => 0.5 - Math.random()));
 				}
 				setCountDown(x => x - 1);
 			} else if( countDown > 0 ) {
@@ -131,6 +129,18 @@ export const GameProvider = ({ children }) => {
 		console.log("starta bastın");	
 	};
 
+	const handleMatch = (name) => {
+		setCardList(prev=> {
+			return prev.map(card => {
+				if (card.name === name) {
+					return { ...card, status: true };
+				} else {
+					return card;
+				}
+			});
+		});
+	};
+
 	const values ={
 		isPanelOpen,
 		setIsPanelOpen,
@@ -147,7 +157,10 @@ export const GameProvider = ({ children }) => {
 		countDown,
 		loading,
 		handleStart,
-		cardList
+		cardList,
+		attemps,
+		setAttemps,
+		handleMatch
 	};
 
 	return (

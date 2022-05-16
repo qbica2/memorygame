@@ -29,102 +29,127 @@ const brandArray = [
 	{
 		image: adidas,
 		name: "Adidas",
+		status: false,
 	},
 	{
 		image: amazon,
 		name: "Amazon",
+		status: false,
 	},
 	{
 		image: calvinklein,
 		name: "Calvin Klein",
+		status: false,
 	},
 	{
 		image: chanel,
 		name: "Chanel",
+		status: false,
 	},
 	{
 		image: cocacola,
 		name: "Coca Cola",
+		status: false,
 	},
 	{
 		image: ebay,
 		name: "Ebay",
+		status: false,
 	},
 	{
 		image: fedex,
 		name: "Fedex",
+		status: false,
 	},
 	{
 		image: jaguar,
 		name: "Jaguar",
+		status: false,
 	},
 	{
 		image: jeep,
 		name: "Jeep",
+		status: false,
 	},
 	{
 		image: lacoste,
 		name: "Lacoste",
+		status: false,
 	},
 	{
 		image: lays,
 		name: "Lays",
+		status: false,
 	},
 	{
 		image: lewis,
 		name: "Lewis",
+		status: false,
 	},
 	{
 		image: louisvuitton,
 		name: "Louis Vuitton",
+		status: false,
 	},
 	{
 		image: mcdonalds,
 		name: "McDonalds",
+		status: false,
 	},
 	{
 		image: newbalance,
 		name: "New Balance",
+		status: false,
 	},
 	{
 		image: nike,
 		name: "Nike",
+		status: false,
 	},
 	{
 		image: porshe,
 		name: "Porshe",
+		status: false,
 	},
 	{
 		image: puma,
 		name: "Puma",
+		status: false,
 	},
 	{
 		image: redbull,
 		name: "Red Bull",
+		status: false,
 	},
 	{
 		image: rolex,
 		name: "Rolex",
+		status: false,
 	},
 	{
 		image: spotify,
 		name: "Spotify",
+		status: false,
 	},
 	{
 		image: subway,
 		name: "Subway",
+		status: false,
 	},
 	{
 		image: toyota,
 		name: "Toyota",
+		status: false,
 	},
 	{
 		image: versage,
 		name: "Versage",
+		status: false,
 	},
 	{
 		image: volvo,
 		name: "Volvo",
+		status: false,
 	}
 	
 ];

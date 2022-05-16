@@ -7,12 +7,14 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	cursor: pointer;
+	cursor: default;
 	position: relative;
 	&.flipped{
+		cursor: pointer;
 		img{
 			transform: perspective(800px) rotateY(180deg);
 			opacity: 0;
+			
 		}
 		.default{
 			transform: perspective(800px) rotateY(0deg);
@@ -25,7 +27,7 @@
 		object-fit: contain;
 		position: absolute;
 		backface-visibility: hidden;
-		cursor: pointer;
+		// cursor: pointer;
 		transition: transform 0.4s;	
 	}
 	.default{
@@ -33,7 +35,7 @@
 		height: 100%;
 		position: absolute;
 		backface-visibility: hidden;
-		cursor: pointer;
+		// cursor: pointer;
 		display: flex;
 		align-items: center;
 		justify-content: center;

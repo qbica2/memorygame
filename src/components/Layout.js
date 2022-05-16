@@ -4,7 +4,7 @@ import GameContext from "../contexts/GameContext";
 
 // eslint-disable-next-line react/prop-types
 function Layout({children}) {
-	const { gameTime, gameScore, gameDifficulty } = useContext(GameContext);
+	const { gameTime, gameScore, gameDifficulty, attemps } = useContext(GameContext);
 	return (
 		<div className={style.layout}>
 			<header 
@@ -13,7 +13,7 @@ function Layout({children}) {
 				${gameDifficulty === "easy" && style.easy}`}>
 				<h1>Memory Game</h1>
 				<nav>
-					<span>Attemps: 10</span>
+					<span>Attemps: {attemps}</span>
 					<span>Time: {gameTime}</span>
 					<span>Score: {gameScore}</span>
 				</nav>
