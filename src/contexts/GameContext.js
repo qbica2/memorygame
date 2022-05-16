@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { createContext, useState, useEffect } from "react";
+import brandArray from "../constants/data/brandArray";
+import teamArray from "../constants/data/teamArray";
 
 const GameContext = createContext();
 
@@ -14,10 +16,16 @@ export const GameProvider = ({ children }) => {
 	const [gameScore, setGameScore] = useState(0);
 	const [countDown, setCountDown] = useState(5);
 	const [loading, setLoading] = useState(false);
+	const [cardList, setCardList] = useState([]);
+
 
 	useEffect(() => {
 		const interval = setInterval(() =>{
 			if(!loading) return;
+			
+			const randomBrandArray = brandArray.sort(() => 0.5 - Math.random());
+			const randomTeamArray = teamArray.sort(() => 0.5 - Math.random());
+
 			console.log("interval çalışıyor");
 			console.log(countDown);
 			if(countDown === 0 ) {
@@ -28,13 +36,42 @@ export const GameProvider = ({ children }) => {
 			} else if(countDown === 1) {
 				setGameDifficulty(panelDifficulty);
 				setGameMode(panelMode);
-				if(panelDifficulty === "easy") {
-					setGameTime(30);
-				} else if(panelDifficulty === "medium") {
-					setGameTime(60);
-				}
-				else if(panelDifficulty === "hard") {
-					setGameTime(90);
+				if(panelMode === "brands") {
+					if(panelDifficulty === "easy") {
+						setGameTime(30);
+						const selectedArray = randomBrandArray.slice(0,6);
+						const newArr = [...selectedArray, ...selectedArray];
+						setCardList(newArr.sort(() => 0.5 - Math.random()));
+					} else if(panelDifficulty === "medium") {
+						setGameTime(60);
+						const selectedArray = randomBrandArray.slice(0,10);
+						const newArr = [...selectedArray, ...selectedArray];
+						setCardList(newArr.sort(() => 0.5 - Math.random()));
+					}
+					else if(panelDifficulty === "hard") {
+						setGameTime(90);
+						const selectedArray = randomBrandArray.slice(0,12);
+						const newArr = [...selectedArray, ...selectedArray];
+						setCardList(newArr.sort(() => 0.5 - Math.random()));
+					}
+				} else if(panelMode === "teams") {
+					if(panelDifficulty === "easy") {
+						setGameTime(30);
+						const selectedArray = randomTeamArray.slice(0,6);
+						const newArr = [...selectedArray, ...selectedArray];
+						setCardList(newArr.sort(() => 0.5 - Math.random()));
+					} else if(panelDifficulty === "medium") {
+						setGameTime(60);
+						const selectedArray = randomTeamArray.slice(0,10);
+						const newArr = [...selectedArray, ...selectedArray];
+						setCardList(newArr.sort(() => 0.5 - Math.random()));
+					}
+					else if(panelDifficulty === "hard") {
+						setGameTime(90);
+						const selectedArray = randomTeamArray.slice(0,12);
+						const newArr = [...selectedArray, ...selectedArray];
+						setCardList(newArr.sort(() => 0.5 - Math.random()));
+					}
 				}
 				setCountDown(x => x - 1);
 			} else if( countDown > 0 ) {
@@ -109,7 +146,8 @@ export const GameProvider = ({ children }) => {
 		setGameScore,
 		countDown,
 		loading,
-		handleStart
+		handleStart,
+		cardList
 	};
 
 	return (
