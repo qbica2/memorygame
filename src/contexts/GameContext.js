@@ -18,6 +18,7 @@ export const GameProvider = ({ children }) => {
 	const [loading, setLoading] = useState(false);
 	const [cardList, setCardList] = useState([]);
 	const [attemps, setAttemps] = useState(0);
+	const [isResultOpen, setIsResultOpen] = useState(false);
 
 
 	useEffect(() => {
@@ -94,6 +95,7 @@ export const GameProvider = ({ children }) => {
 			} else{
 				setGameTime(0);
 				setIsGameStarted(false);
+				handleEndGame();
 				clearInterval(timer);
 			}
 		},1000);
@@ -139,6 +141,25 @@ export const GameProvider = ({ children }) => {
 				}
 			});
 		});
+		if(gameDifficulty === "easy") {
+			setGameScore(gameScore + 30);
+		} else if(gameDifficulty === "medium") {
+			setGameScore(gameScore + 40);
+		} else if(gameDifficulty === "hard") {
+			setGameScore(gameScore + 50);
+		}
+	};
+
+	const handleAttempsAndScore = () => {
+		setAttemps(attemps + 1);
+		setGameScore(gameScore - 5);
+	};
+
+	const handleEndGame = () => {
+		console.log("oyun bitti");
+		const isSuccess = cardList.every(card => card.status === true);
+		console.log("isSuccess: ", isSuccess);
+		setIsResultOpen(true);
 	};
 
 	const values ={
@@ -160,7 +181,10 @@ export const GameProvider = ({ children }) => {
 		cardList,
 		attemps,
 		setAttemps,
-		handleMatch
+		handleMatch,
+		handleEndGame,
+		handleAttempsAndScore,
+		isResultOpen,
 	};
 
 	return (

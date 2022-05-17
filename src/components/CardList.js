@@ -6,7 +6,7 @@ import style from "../styles/cardlist.module.scss";
 
 function CardList() {
 
-	const { gameDifficulty, cardList, setAttemps, handleMatch } = useContext(GameContext);
+	const { gameDifficulty, cardList, setAttemps, handleMatch, handleAttempsAndScore } = useContext(GameContext);
 
 	const [choiceOne, setChoiceOne] = useState(null);
 	const [choiceTwo, setChoiceTwo] = useState(null);
@@ -15,11 +15,13 @@ function CardList() {
 		if (choiceOne && choiceTwo) {
 			if(choiceOne.name === choiceTwo.name){
 				console.log("You found a match!");
+				handleAttempsAndScore();
 				handleMatch(choiceOne.name);
 				reset();
 			}
 			else {
 				console.log("No match!");
+				handleAttempsAndScore();
 				setTimeout(() =>reset(), 1000);
 			}
 		}
@@ -44,7 +46,6 @@ function CardList() {
 	const reset = () => {
 		setChoiceOne(null);
 		setChoiceTwo(null);
-		setAttemps(x => x + 1);
 	};
 
 	
