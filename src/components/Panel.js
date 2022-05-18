@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import GameContext from "../contexts/GameContext";
+import Close from "../constants/icons/Close";
 import style from "../styles/panel.module.scss";
 
 function Panel() {
@@ -8,6 +9,9 @@ function Panel() {
 	return (
 		<div className={style.panel}>
 			<div className={style.content}>
+				<nav>
+					<button><Close color="#000"/></button>
+				</nav>
 				<div className={style.gameplay}>
 					<div className={style.title}>How to play?</div>
 					<span>
