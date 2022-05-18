@@ -180,6 +180,10 @@ export const GameProvider = ({ children }) => {
 
 	};
 
+	const handleClosePanel = () => {
+		setIsPanelOpen(false);
+	};
+
 
 	const values ={
 		isPanelOpen,
@@ -204,7 +208,8 @@ export const GameProvider = ({ children }) => {
 		handleAttempsAndScore,
 		isResultOpen,
 		isSuccess,
-		handleNewGame
+		handleNewGame,
+		handleClosePanel
 	};
 
 	return (

@@ -4,13 +4,13 @@ import Close from "../constants/icons/Close";
 import style from "../styles/panel.module.scss";
 
 function Panel() {
-	const { panelDifficulty, handleDifficultyChange, panelMode, handleModeChange, handleStart, loading, countDown } = useContext(GameContext);
+	const { panelDifficulty, handleDifficultyChange, panelMode, handleModeChange, handleStart, loading, countDown, handleClosePanel } = useContext(GameContext);
 	
 	return (
 		<div className={style.panel}>
 			<div className={style.content}>
 				<nav>
-					<button><Close color="#000"/></button>
+					<button onClick={handleClosePanel}><Close color="#000"/></button>
 				</nav>
 				<div className={style.gameplay}>
 					<div className={style.title}>How to play?</div>
