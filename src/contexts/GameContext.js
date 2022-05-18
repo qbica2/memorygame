@@ -141,6 +141,8 @@ export const GameProvider = ({ children }) => {
 			alert("Please select a difficulty and mode");
 			return;
 		}
+		setGameScore(0);
+		setAttemps(0);
 		setLoading(true);
 		console.log("starta bastın");	
 	};
@@ -169,6 +171,15 @@ export const GameProvider = ({ children }) => {
 		setGameScore(gameScore - 5);
 	};
 
+	const handleNewGame = () => {
+		setIsResultOpen(false);
+		setIsPanelOpen(true);
+		setPanelMode("");
+		setPanelDifficulty("");
+		setCountDown(5);
+
+	};
+
 
 	const values ={
 		isPanelOpen,
@@ -192,7 +203,8 @@ export const GameProvider = ({ children }) => {
 		handleMatch,
 		handleAttempsAndScore,
 		isResultOpen,
-		isSuccess
+		isSuccess,
+		handleNewGame
 	};
 
 	return (
