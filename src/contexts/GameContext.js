@@ -19,8 +19,9 @@ export const GameProvider = ({ children }) => {
 	const [cardList, setCardList] = useState([]);
 	const [attemps, setAttemps] = useState(0);
 	const [isResultOpen, setIsResultOpen] = useState(false);
+	const [isSuccess, setIsSuccess] = useState(false);
 
-
+	console.log(gameScore,"gameScore");
 	useEffect(() => {
 		const interval = setInterval(() =>{
 			if(!loading) return;
@@ -90,12 +91,25 @@ export const GameProvider = ({ children }) => {
 	useEffect(() => {
 		const timer = setInterval(() => {
 			if(!isGameStarted) return;
-			if(gameTime > 0){
-				setGameTime(gameTime - 1);
+			if(gameTime > 0){	
+				const isSuccess = cardList.every(card => card.status === true);
+				if(isSuccess) {
+					console.log("success");
+					setIsGameStarted(false);
+					setGameScore(gameScore + gameTime);
+					setIsSuccess(true);
+					clearInterval(timer);
+					setIsResultOpen(true);
+				}else {
+					setGameTime(gameTime - 1);
+				}
+
+
 			} else{
 				setGameTime(0);
 				setIsGameStarted(false);
-				handleEndGame();
+				setIsResultOpen(true);
+				setIsSuccess(false);
 				clearInterval(timer);
 			}
 		},1000);
@@ -155,12 +169,6 @@ export const GameProvider = ({ children }) => {
 		setGameScore(gameScore - 5);
 	};
 
-	const handleEndGame = () => {
-		console.log("oyun bitti");
-		const isSuccess = cardList.every(card => card.status === true);
-		console.log("isSuccess: ", isSuccess);
-		setIsResultOpen(true);
-	};
 
 	const values ={
 		isPanelOpen,
@@ -182,9 +190,9 @@ export const GameProvider = ({ children }) => {
 		attemps,
 		setAttemps,
 		handleMatch,
-		handleEndGame,
 		handleAttempsAndScore,
 		isResultOpen,
+		isSuccess
 	};
 
 	return (

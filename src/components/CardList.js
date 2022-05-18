@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useContext, useState, useEffect} from "react";
 import GameContext from "../contexts/GameContext";
 import Card from "./Card";
@@ -6,7 +5,7 @@ import style from "../styles/cardlist.module.scss";
 
 function CardList() {
 
-	const { gameDifficulty, cardList, setAttemps, handleMatch, handleAttempsAndScore } = useContext(GameContext);
+	const { gameDifficulty, cardList, handleMatch, handleAttempsAndScore } = useContext(GameContext);
 
 	const [choiceOne, setChoiceOne] = useState(null);
 	const [choiceTwo, setChoiceTwo] = useState(null);
