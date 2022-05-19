@@ -21,7 +21,6 @@ export const GameProvider = ({ children }) => {
 	const [isResultOpen, setIsResultOpen] = useState(false);
 	const [isSuccess, setIsSuccess] = useState(false);
 	const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-	const [isFirstTime, setIsFirstTime] = useState(true);
 
 	console.log(gameScore,"gameScore");
 	useEffect(() => {
@@ -100,7 +99,6 @@ export const GameProvider = ({ children }) => {
 					setIsGameStarted(false);
 					setGameScore(gameScore + gameTime);
 					setIsSuccess(true);
-					setIsFirstTime(false);
 					clearInterval(timer);
 					setIsResultOpen(true);
 				}else {
@@ -231,7 +229,6 @@ export const GameProvider = ({ children }) => {
 		handleOpenPanel,
 		handleSidebarOpen,
 		isSidebarOpen,
-		isFirstTime,
 		handleResultClose
 	};
 

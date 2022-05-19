@@ -1,12 +1,11 @@
 import React, { useContext, useState, useEffect} from "react";
 import GameContext from "../contexts/GameContext";
 import Card from "./Card";
-import QuestionMark from "../constants/icons/QuestionMark";
 import style from "../styles/cardlist.module.scss";
 
 function CardList() {
 
-	const { gameDifficulty, cardList, handleMatch, handleAttempsAndScore, isGameStarted, handleOpenPanel, isFirstTime } = useContext(GameContext);
+	const { gameDifficulty, cardList, handleMatch, handleAttempsAndScore } = useContext(GameContext);
 
 	const [choiceOne, setChoiceOne] = useState(null);
 	const [choiceTwo, setChoiceTwo] = useState(null);
@@ -54,12 +53,10 @@ function CardList() {
 		<div className={`${style.container} ${gameDifficulty === "hard" && style.hard } ${gameDifficulty === "medium" && style.medium} 
 		${gameDifficulty === "easy" && style.easy}`}>
 			{	
-				isGameStarted ?
-					cardList.map((card,index) =>(
-						<Card key={index} id={index} image={card.image} name={card.name} handleChoice={handleChoice} flipped={card === choiceOne || card === choiceTwo || card.status} card={card}/>
-					) )
-					:
-					isFirstTime && <div className={style.notStarted} onClick={handleOpenPanel}><QuestionMark size={320}/> </div>
+				cardList.map((card,index) =>(
+					<Card key={index} id={index} image={card.image} name={card.name} handleChoice={handleChoice} flipped={card === choiceOne || card === choiceTwo || card.status} card={card}/>
+				) )
+					
 			}
 		</div>
 	);
