@@ -21,6 +21,19 @@ export const GameProvider = ({ children }) => {
 	const [isResultOpen, setIsResultOpen] = useState(false);
 	const [isSuccess, setIsSuccess] = useState(false);
 	const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+	const [statistics, setStatistics] = useState({
+		totalGamePlayed: localStorage.getItem("statistics") ? JSON.parse(localStorage.getItem("statistics")).totalGamePlayed : 0,
+		totalGameWon: localStorage.getItem("statistics") ? JSON.parse(localStorage.getItem("statistics")).totalGameWon : 0,
+		totalGameLost: localStorage.getItem("statistics") ? JSON.parse(localStorage.getItem("statistics")).totalGameLost : 0,
+		totalHardGames: localStorage.getItem("statistics") ? JSON.parse(localStorage.getItem("statistics")).totalHardGames : 0,
+		totalMediumGames: localStorage.getItem("statistics") ? JSON.parse(localStorage.getItem("statistics")).totalMediumGames : 0,
+		totalEasyGames: localStorage.getItem("statistics") ? JSON.parse(localStorage.getItem("statistics")).totalEasyGames : 0,
+		totalHardWon: localStorage.getItem("statistics") ? JSON.parse(localStorage.getItem("statistics")).totalHardWon : 0,
+		totalMediumWon: localStorage.getItem("statistics") ? JSON.parse(localStorage.getItem("statistics")).totalMediumWon : 0,
+		totalEasyWon: localStorage.getItem("statistics") ? JSON.parse(localStorage.getItem("statistics")).totalEasyWon : 0,
+		scores: localStorage.getItem("statistics") ? JSON.parse(localStorage.getItem("statistics")).scores : [],
+	});
+
 
 	useEffect(() => {
 		const interval = setInterval(() =>{
@@ -95,8 +108,25 @@ export const GameProvider = ({ children }) => {
 				const isSuccess = cardList.every(card => card.status === true);
 				if(isSuccess) {
 					console.log("success");
+
+					const newStatistics = {
+						totalGamePlayed : statistics.totalGamePlayed + 1,
+						totalGameWon : statistics.totalGameWon + 1  ,
+						totalGameLost : statistics.totalGameLost ,
+						totalHardGames : gameDifficulty === "hard" ? statistics.totalHardGames + 1 : statistics.totalHardGames,
+						totalMediumGames : gameDifficulty === "medium" ? statistics.totalMediumGames + 1 : statistics.totalMediumGames,
+						totalEasyGames : gameDifficulty === "easy" ? statistics.totalEasyGames + 1 : statistics.totalEasyGames,
+						totalHardWon: gameDifficulty === "hard" ? statistics.totalHardWon + 1 : statistics.totalHardWon,
+						totalMediumWon: gameDifficulty === "medium" ? statistics.totalMediumWon + 1 : statistics.totalMediumWon,
+						totalEasyWon: gameDifficulty === "easy" ? statistics.totalEasyWon + 1 : statistics.totalEasyWon,
+						scores: [gameScore + gameTime, ...statistics.scores],
+					};
+					localStorage.setItem("statistics", JSON.stringify(newStatistics));
+					setStatistics(newStatistics);
 					setIsGameStarted(false);
 					setGameScore(gameScore + gameTime);
+					setPanelMode("");
+					setPanelDifficulty("");
 					setIsSuccess(true);
 					clearInterval(timer);
 					setIsResultOpen(true);
@@ -106,7 +136,23 @@ export const GameProvider = ({ children }) => {
 
 
 			} else{
+				const newStatistics = {
+					totalGamePlayed : statistics.totalGamePlayed + 1,
+					totalGameWon : statistics.totalGameWon  ,
+					totalGameLost : statistics.totalGameLost + 1,
+					totalHardGames : gameDifficulty === "hard" ? statistics.totalHardGames + 1 : statistics.totalHardGames,
+					totalMediumGames : gameDifficulty === "medium" ? statistics.totalMediumGames + 1 : statistics.totalMediumGames,
+					totalEasyGames : gameDifficulty === "easy" ? statistics.totalEasyGames + 1 : statistics.totalEasyGames,
+					totalHardWon: statistics.totalHardWon,
+					totalMediumWon: statistics.totalMediumWon,
+					totalEasyWon: statistics.totalEasyWon,
+					scores: [gameScore , ...statistics.scores]
+				};
+				localStorage.setItem("statistics", JSON.stringify(newStatistics));
+				setStatistics(newStatistics);
 				setGameTime(0);
+				setPanelMode("");
+				setPanelDifficulty("");
 				setIsGameStarted(false);
 				setIsResultOpen(true);
 				setIsSuccess(false);
@@ -172,20 +218,13 @@ export const GameProvider = ({ children }) => {
 	};
 
 	const handleNewGame = () => {
-		setIsResultOpen(false);
-		setIsPanelOpen(true);
-		setPanelMode("");
-		setPanelDifficulty("");
-		setCountDown(5);
-
-	};
-
-	const handleOpenPanel = () => {
 		if(isGameStarted){
 			alert("Please finish the game first");
 			return;
 		}
+		setIsResultOpen(false);
 		setIsPanelOpen(true);
+		setCountDown(5);
 	};
 
 	const handleClosePanel = () => {
@@ -225,7 +264,6 @@ export const GameProvider = ({ children }) => {
 		isSuccess,
 		handleNewGame,
 		handleClosePanel,
-		handleOpenPanel,
 		handleSidebarOpen,
 		isSidebarOpen,
 		handleResultClose

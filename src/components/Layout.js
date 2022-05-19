@@ -9,13 +9,13 @@ import Sidebar from "./Sidebar";
 
 // eslint-disable-next-line react/prop-types
 function Layout({children}) {
-	const { gameTime, gameScore, gameDifficulty, attemps, handleOpenPanel, handleSidebarOpen, isGameStarted } = useContext(GameContext);
+	const { gameTime, gameScore, gameDifficulty, attemps, handleNewGame, handleSidebarOpen, isGameStarted } = useContext(GameContext);
 	return (
 		<div className={style.layout}>
 			<div className={style.nav}>
 				<div className={style.left}>
 					<button onClick={handleSidebarOpen}><Contact size={24}/></button>
-					<button onClick={handleOpenPanel}><Start size={24} /></button>
+					<button onClick={handleNewGame}><Start size={24} /></button>
 				</div>
 				<div className={style.right}>
 					<button><Statistic width={36} height={24}/></button>

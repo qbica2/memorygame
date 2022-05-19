@@ -4,9 +4,9 @@ import QuestionMark from "../constants/icons/QuestionMark";
 import style from "../styles/default.module.scss";
 
 function Default() {
-	const { handleOpenPanel } = useContext(GameContext);
+	const { handleNewGame } = useContext(GameContext);
 	return (
-		<div className={style.default} onClick={handleOpenPanel}><QuestionMark size={320}/> </div>
+		<div className={style.default} onClick={handleNewGame}><QuestionMark size={320}/> </div>
 	);
 }
 
