@@ -6,10 +6,11 @@ import Setting from "../constants/icons/Setting";
 import Contact from "../constants/icons/Contact";
 import Start from "../constants/icons/Start";
 import Sidebar from "./Sidebar";
+import StatisticsPanel from "./StatisticsPanel";
 
 // eslint-disable-next-line react/prop-types
 function Layout({children}) {
-	const { gameTime, gameScore, gameDifficulty, attemps, handleNewGame, handleSidebarOpen, isGameStarted } = useContext(GameContext);
+	const { gameTime, gameScore, gameDifficulty, attemps, handleNewGame, handleSidebarOpen, isGameStarted, handleStatisticsOpen } = useContext(GameContext);
 	return (
 		<div className={style.layout}>
 			<div className={style.nav}>
@@ -18,11 +19,12 @@ function Layout({children}) {
 					<button onClick={handleNewGame}><Start size={24} /></button>
 				</div>
 				<div className={style.right}>
-					<button><Statistic width={36} height={24}/></button>
+					<button onClick={handleStatisticsOpen}><Statistic width={36} height={24}/></button>
 					<button><Setting/></button>
 				</div>
 			</div>
 			<Sidebar />
+			<StatisticsPanel />
 			<header 
 				className={`${gameDifficulty === "hard" && style.hard } 
 				${gameDifficulty === "medium" && style.medium} 

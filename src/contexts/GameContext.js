@@ -21,6 +21,7 @@ export const GameProvider = ({ children }) => {
 	const [isResultOpen, setIsResultOpen] = useState(false);
 	const [isSuccess, setIsSuccess] = useState(false);
 	const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+	const [isStatisticsOpen, setIsStatisticsOpen] = useState(false);
 	const [statistics, setStatistics] = useState({
 		totalGamePlayed: localStorage.getItem("statistics") ? JSON.parse(localStorage.getItem("statistics")).totalGamePlayed : 0,
 		totalGameWon: localStorage.getItem("statistics") ? JSON.parse(localStorage.getItem("statistics")).totalGameWon : 0,
@@ -239,6 +240,10 @@ export const GameProvider = ({ children }) => {
 		setIsResultOpen(false);
 	};
 
+	const handleStatisticsOpen = () => {
+		setIsStatisticsOpen(!isStatisticsOpen);
+	};
+
 
 	const values ={
 		isPanelOpen,
@@ -266,7 +271,10 @@ export const GameProvider = ({ children }) => {
 		handleClosePanel,
 		handleSidebarOpen,
 		isSidebarOpen,
-		handleResultClose
+		handleResultClose,
+		statistics,
+		handleStatisticsOpen,
+		isStatisticsOpen,
 	};
 
 	return (
