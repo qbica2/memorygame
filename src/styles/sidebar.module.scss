@@ -1,7 +1,9 @@
 .sidebar{
-	  width: 300px;
-  height: 400px;
-  background-color: #f5f5f5;
+	width: 260px;
+  height: 300px;
+  background-color: #F7F7F7;
+  box-shadow: 3px 5px 5px rgb(0 0 0 / 15%);
+  border-radius: 0 10px 10px 0;
   position: fixed;
   top: 100px;
   left: 0;
@@ -9,7 +11,51 @@
   overflow-x: hidden;
   transition: all 0.3s;
   transform: translate(-100%, 0);
-  padding-top: 60px;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .me{
+    margin-top: 10px;
+    font-size: 18px;
+    font-family: 'Berkshire Swash', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img{
+      width: 80px;
+      height: 80px;
+      border-radius:56% 44% 67% 33% / 25% 45% 55% 75% ;
+      margin-bottom: 10px;
+    }
+  }
+  .connect{
+    width: 95%;
+    margin-top: 30px;
+    font-size: 14px;
+    .social{
+      width: 100%;
+      display: flex;
+      justify-content:center;
+      a{
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+        transition: all 0.3s;
+        opacity: 0.7;
+        cursor: pointer;
+        &:hover{
+          background-color: #D8D2CB;
+          opacity: 1;
+        }
+      }
+    }
+  }
   &.open{
 	transform: translate(0, 0);
   }
