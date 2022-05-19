@@ -99,6 +99,7 @@ export const GameProvider = ({ children }) => {
 					setIsGameStarted(false);
 					setGameScore(gameScore + gameTime);
 					setIsSuccess(true);
+					setGameDifficulty("");
 					clearInterval(timer);
 					setIsResultOpen(true);
 				}else {
@@ -182,6 +183,10 @@ export const GameProvider = ({ children }) => {
 	};
 
 	const handleOpenPanel = () => {
+		if(isGameStarted){
+			alert("Please finish the game first");
+			return;
+		}
 		setIsPanelOpen(true);
 	};
 

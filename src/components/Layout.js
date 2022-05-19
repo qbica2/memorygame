@@ -9,7 +9,7 @@ import Sidebar from "./Sidebar";
 
 // eslint-disable-next-line react/prop-types
 function Layout({children}) {
-	const { gameTime, gameScore, gameDifficulty, attemps, handleOpenPanel, handleSidebarOpen } = useContext(GameContext);
+	const { gameTime, gameScore, gameDifficulty, attemps, handleOpenPanel, handleSidebarOpen, isGameStarted } = useContext(GameContext);
 	return (
 		<div className={style.layout}>
 			<div className={style.nav}>
@@ -28,11 +28,14 @@ function Layout({children}) {
 				${gameDifficulty === "medium" && style.medium} 
 				${gameDifficulty === "easy" && style.easy}`}>
 				<h1>Memory Game</h1>
-				<nav>
-					<span>Attemps: {attemps}</span>
-					<span>Time: {gameTime}</span>
-					<span>Score: {gameScore}</span>
-				</nav>
+				{
+					isGameStarted &&	
+					<nav>
+						<span>Attemps: {attemps}</span>
+						<span>Time: {gameTime}</span>
+						<span>Score: {gameScore}</span>
+					</nav>
+				}
 			</header>
 			{children}
 		</div>

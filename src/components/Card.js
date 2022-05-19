@@ -13,7 +13,7 @@ function Card({ id, image , card , flipped, handleChoice}) {
 		<div className={`${style.card} ${!flipped ? style.flipped : ""}`}  onClick={handleClick}>
 			<img src={image} alt={id} />
 			<div className={style.default}>
-				<QuestionMark />
+				<QuestionMark size={80}/>
 			</div>
 		</div>
 	);
