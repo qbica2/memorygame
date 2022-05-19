@@ -22,7 +22,6 @@ export const GameProvider = ({ children }) => {
 	const [isSuccess, setIsSuccess] = useState(false);
 	const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-	console.log(gameScore,"gameScore");
 	useEffect(() => {
 		const interval = setInterval(() =>{
 			if(!loading) return;
@@ -240,5 +239,3 @@ export const GameProvider = ({ children }) => {
 };
 
 export default GameContext;
-
-

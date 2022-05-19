@@ -28,6 +28,10 @@ function CardList() {
 	},[choiceOne,choiceTwo]);
 
 	const handleChoice = (card) => {
+		if(choiceOne && choiceTwo){
+			console.log("yavaş ayı");
+			return;
+		}
 		console.log(card);
 		if(choiceOne){
 			if(choiceOne.id===card.id){
