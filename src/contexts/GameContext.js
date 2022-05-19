@@ -20,6 +20,7 @@ export const GameProvider = ({ children }) => {
 	const [attemps, setAttemps] = useState(0);
 	const [isResultOpen, setIsResultOpen] = useState(false);
 	const [isSuccess, setIsSuccess] = useState(false);
+	const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
 	console.log(gameScore,"gameScore");
 	useEffect(() => {
@@ -180,14 +181,21 @@ export const GameProvider = ({ children }) => {
 
 	};
 
+	const handleOpenPanel = () => {
+		setIsPanelOpen(true);
+	};
+
 	const handleClosePanel = () => {
 		setIsPanelOpen(false);
+	};
+
+	const handleSidebarOpen = () => {
+		setIsSidebarOpen(!isSidebarOpen);
 	};
 
 
 	const values ={
 		isPanelOpen,
-		setIsPanelOpen,
 		panelDifficulty,
 		handleDifficultyChange,
 		panelMode,
@@ -209,7 +217,10 @@ export const GameProvider = ({ children }) => {
 		isResultOpen,
 		isSuccess,
 		handleNewGame,
-		handleClosePanel
+		handleClosePanel,
+		handleOpenPanel,
+		handleSidebarOpen,
+		isSidebarOpen
 	};
 
 	return (

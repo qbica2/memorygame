@@ -5,22 +5,24 @@ import Statistic from "../constants/icons/Statistic";
 import Setting from "../constants/icons/Setting";
 import Contact from "../constants/icons/Contact";
 import Start from "../constants/icons/Start";
+import Sidebar from "./Sidebar";
 
 // eslint-disable-next-line react/prop-types
 function Layout({children}) {
-	const { gameTime, gameScore, gameDifficulty, attemps } = useContext(GameContext);
+	const { gameTime, gameScore, gameDifficulty, attemps, handleOpenPanel, handleSidebarOpen } = useContext(GameContext);
 	return (
 		<div className={style.layout}>
 			<div className={style.nav}>
 				<div className={style.left}>
-					<button><Contact size={24}/></button>
-					<button><Start size={24} /></button>
+					<button onClick={handleSidebarOpen}><Contact size={24}/></button>
+					<button onClick={handleOpenPanel}><Start size={24} /></button>
 				</div>
 				<div className={style.right}>
 					<button><Statistic width={36} height={24}/></button>
 					<button><Setting/></button>
 				</div>
 			</div>
+			<Sidebar />
 			<header 
 				className={`${gameDifficulty === "hard" && style.hard } 
 				${gameDifficulty === "medium" && style.medium} 
