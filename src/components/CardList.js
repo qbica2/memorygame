@@ -6,7 +6,7 @@ import style from "../styles/cardlist.module.scss";
 
 function CardList() {
 
-	const { gameDifficulty, cardList, handleMatch, handleAttempsAndScore, isGameStarted, handleOpenPanel } = useContext(GameContext);
+	const { gameDifficulty, cardList, handleMatch, handleAttempsAndScore, isGameStarted, handleOpenPanel, isFirstTime } = useContext(GameContext);
 
 	const [choiceOne, setChoiceOne] = useState(null);
 	const [choiceTwo, setChoiceTwo] = useState(null);
@@ -22,7 +22,7 @@ function CardList() {
 			else {
 				console.log("No match!");
 				handleAttempsAndScore();
-				setTimeout(() =>reset(), 1000);
+				setTimeout(() =>reset(), 600);
 			}
 		}
 
@@ -59,7 +59,7 @@ function CardList() {
 						<Card key={index} id={index} image={card.image} name={card.name} handleChoice={handleChoice} flipped={card === choiceOne || card === choiceTwo || card.status} card={card}/>
 					) )
 					:
-					<div className={style.notStarted} onClick={handleOpenPanel}><QuestionMark size={320}/> </div>
+					isFirstTime && <div className={style.notStarted} onClick={handleOpenPanel}><QuestionMark size={320}/> </div>
 			}
 		</div>
 	);
