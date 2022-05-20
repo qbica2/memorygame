@@ -33,8 +33,10 @@ export const GameProvider = ({ children }) => {
 		totalMediumWon: localStorage.getItem("statistics") ? JSON.parse(localStorage.getItem("statistics")).totalMediumWon : 0,
 		totalEasyWon: localStorage.getItem("statistics") ? JSON.parse(localStorage.getItem("statistics")).totalEasyWon : 0,
 		scores: localStorage.getItem("statistics") ? JSON.parse(localStorage.getItem("statistics")).scores : [],
+		easyScores: localStorage.getItem("statistics") ? JSON.parse(localStorage.getItem("statistics")).easyScores : [],
+		mediumScores: localStorage.getItem("statistics") ? JSON.parse(localStorage.getItem("statistics")).mediumScores : [],
+		hardScores: localStorage.getItem("statistics") ? JSON.parse(localStorage.getItem("statistics")).hardScores : [],
 	});
-
 
 	useEffect(() => {
 		const interval = setInterval(() =>{
@@ -121,6 +123,9 @@ export const GameProvider = ({ children }) => {
 						totalMediumWon: gameDifficulty === "medium" ? statistics.totalMediumWon + 1 : statistics.totalMediumWon,
 						totalEasyWon: gameDifficulty === "easy" ? statistics.totalEasyWon + 1 : statistics.totalEasyWon,
 						scores: [gameScore + gameTime, ...statistics.scores],
+						easyScores: gameDifficulty === "easy" ? [gameScore + gameTime, ...statistics.easyScores] : statistics.easyScores,
+						mediumScores: gameDifficulty === "medium" ? [gameScore + gameTime, ...statistics.mediumScores] : statistics.mediumScores,
+						hardScores: gameDifficulty === "hard" ? [gameScore + gameTime, ...statistics.hardScores] : statistics.hardScores,
 					};
 					localStorage.setItem("statistics", JSON.stringify(newStatistics));
 					setStatistics(newStatistics);
@@ -147,7 +152,10 @@ export const GameProvider = ({ children }) => {
 					totalHardWon: statistics.totalHardWon,
 					totalMediumWon: statistics.totalMediumWon,
 					totalEasyWon: statistics.totalEasyWon,
-					scores: [gameScore , ...statistics.scores]
+					scores: [gameScore , ...statistics.scores],
+					easyScores: gameDifficulty === "easy" ? [gameScore , ...statistics.easyScores] : statistics.easyScores,
+					mediumScores: gameDifficulty === "medium" ? [gameScore , ...statistics.mediumScores] : statistics.mediumScores,
+					hardScores: gameDifficulty === "hard" ? [gameScore , ...statistics.hardScores] : statistics.hardScores,
 				};
 				localStorage.setItem("statistics", JSON.stringify(newStatistics));
 				setStatistics(newStatistics);
