@@ -83,6 +83,7 @@ function StatisticsPanel() {
 						</div>
 					</aside>
 				</section>
+				<div className={style.difficulty}>Difficulty Distribution</div>
 				<section>
 					<span>Easy</span>
 					<aside>
