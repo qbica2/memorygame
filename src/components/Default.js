@@ -6,7 +6,7 @@ import style from "../styles/default.module.scss";
 function Default() {
 	const { handleNewGame } = useContext(GameContext);
 	return (
-		<div className={style.default} onClick={handleNewGame}><QuestionMark size={320}/> </div>
+		<div className={style.default} onClick={handleNewGame}><QuestionMark size={320} color="black"/> </div>
 	);
 }
 

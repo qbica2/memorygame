@@ -15,11 +15,11 @@ function Layout({children}) {
 		<div className={style.layout}>
 			<div className={style.nav}>
 				<div className={style.left}>
-					<button onClick={handleSidebarOpen}><Contact size={24}/></button>
-					<button onClick={handleNewGame}><Start size={24} /></button>
+					<button onClick={handleSidebarOpen}><Contact size={24} color="#030303"/></button>
+					<button onClick={handleNewGame}><Start size={24} color="black" /></button>
 				</div>
 				<div className={style.right}>
-					<button onClick={handleStatisticsOpen}><Statistic width={36} height={24}/></button>
+					<button onClick={handleStatisticsOpen}><Statistic width={36} height={24} color="black"/></button>
 					<button><Setting/></button>
 				</div>
 			</div>
