@@ -1,12 +1,15 @@
 import React from "react";
 import Game from "./components/Game";
 import { GameProvider } from "./contexts/GameContext";
+import { ThemeProvider } from "./contexts/ThemeContext";
 
 function App() {
 	return (
-		<GameProvider>
-			<Game />	
-		</GameProvider>
+		<ThemeProvider>
+			<GameProvider>
+				<Game />	
+			</GameProvider>
+		</ThemeProvider>
 	);
 }
 
