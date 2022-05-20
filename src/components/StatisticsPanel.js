@@ -1,8 +1,12 @@
 import React, { useContext, useState, useEffect}from "react";
 import GameContext from "../contexts/GameContext";
+import ThemeContext from "../contexts/ThemeContext";
 import style from "../styles/statisticsPanel.module.scss";
 
 function StatisticsPanel() {
+
+	const { theme } = useContext(ThemeContext);
+
 	const { statistics, isStatisticsOpen } = useContext(GameContext);
 	const [totalWinRate,setTotalWinRate] = useState(0);
 	const [totalRecord,setTotalRecord] = useState(0);
@@ -55,7 +59,7 @@ function StatisticsPanel() {
 	} , [statistics]);
 
 	return (
-		<div className={`${style.container} ${isStatisticsOpen ? style.open : ""}`}>
+		<div className={`${style.container} ${isStatisticsOpen ? style.open : ""} ${theme ==="dark" && style.dark}`}>
 			<header>Statistics</header>
 			<main>
 				<section>

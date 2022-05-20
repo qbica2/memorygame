@@ -9,6 +9,9 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	&.dark{
+		background-color: rgba(34, 57, 75, 0.9);
+	}
 	.content{
 		width: 470px;
 		height: 310px;
@@ -18,6 +21,10 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		&.dark{
+			background-color: #121213;;
+			color: #fff;
+		}
 		nav{
 			padding: 10px;
 			align-self: flex-end;
@@ -25,6 +32,10 @@
 				background-color: #fff;
 				border: none;
 				cursor: pointer;
+				&.dark{
+					background-color: #000;
+					color: #fff;
+				}
 			}
 		}
 		.title{
@@ -64,6 +75,9 @@
 			font-family: 'Berkshire Swash', cursive;
 			background-image: linear-gradient(to right, #7474BF 0%, #348AC7 51%, #7474BF 100%);
 			box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+			&.dark{
+				color: #fff;
+			}
 		}
 
 	}

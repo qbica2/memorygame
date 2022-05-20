@@ -1,7 +1,7 @@
 .container{
 	padding-left: 20px;
 	padding-top: 20px;
-	background-color: #f5f2ec;
+	background-color: #F7F7F7;
 	box-shadow: 3px 5px 5px rgb(0 0 0 / 15%);
 	border-radius: 10px;
 	display: flex;
@@ -21,5 +21,8 @@
 	&.easy{
 		width: 540px;
 		height: 410px;
+	}
+	&.dark{
+		background-color: rgba(34, 57, 75, 0.9);
 	}
 }

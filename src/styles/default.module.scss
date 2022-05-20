@@ -1,11 +1,15 @@
 .default{
 	width: 520px;
 	height: 390px;
-	background-color: #f5f2ec;
+	background-color: #F7F7F7;
 	box-shadow: 3px 5px 5px rgb(0 0 0 / 15%);
 	border-radius: 10px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
+	&.dark{
+		background-color: rgba(34, 57, 75, 0.9);
+		color: #fff;
+	}
 }
