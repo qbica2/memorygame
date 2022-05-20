@@ -12,9 +12,9 @@ function Sidebar() {
 	const { theme } = useContext(ThemeContext);
 
 	return (
-		<div className={`${style.sidebar} ${isSidebarOpen ? style.open : ""} ${theme ==="dark" && style.dark}`}>
+		<div className={`${style.sidebar} ${isSidebarOpen ? style.open : ""} ${theme ==="dark" ? style.dark : ""}`}>
 			<div className={style.me}>
-				<img src="https://picsum.photos/200" alt="me" />
+				<img src="https://avatars.githubusercontent.com/u/88967031?s=400&u=3bdd6ef0f3547498632e9901f82915d38d27df6d&v=4" alt="me" />
 				Kubilay Akdemir
 			</div>
 			<div className={style.connect}>

@@ -15,15 +15,15 @@ function Layout({children}) {
 	const { gameTime, gameScore, gameDifficulty, attemps, handleNewGame, handleSidebarOpen, isGameStarted, handleStatisticsOpen } = useContext(GameContext);
 	const { theme, handleSetTheme } = useContext(ThemeContext);
 	return (
-		<div className={`${style.layout} ${theme ==="dark" && style.dark}`}>
+		<div className={`${style.layout} ${theme ==="dark" ? style.dark : ""}`}>
 			<div className={style.nav}>
 				<div className={style.left}>
-					<button className={theme ==="dark" && style.dark} onClick={handleSidebarOpen}><Contact size={24} color={theme === "dark" ? "#fff": "#030303" }/></button>
-					<button className={theme ==="dark" && style.dark} onClick={handleNewGame}><Start size={24} color={theme === "dark" ? "#fff": "#030303" } /></button>
+					<button className={theme ==="dark" ? style.dark : ""} onClick={handleSidebarOpen}><Contact size={24} color={theme === "dark" ? "#fff": "#030303" }/></button>
+					<button className={theme ==="dark" ? style.dark : ""} onClick={handleNewGame}><Start size={24} color={theme === "dark" ? "#fff": "#030303" } /></button>
 				</div>
 				<div className={style.right}>
-					<button className={theme ==="dark" && style.dark} onClick={handleStatisticsOpen}><Statistic width={36} height={24} color={theme === "dark" ? "#fff": "#030303" }/></button>
-					<button className={theme ==="dark" && style.dark} onClick={handleSetTheme}>
+					<button className={theme ==="dark" ? style.dark : ""} onClick={handleStatisticsOpen}><Statistic width={36} height={24} color={theme === "dark" ? "#fff": "#030303" }/></button>
+					<button className={theme ==="dark" ? style.dark : ""} onClick={handleSetTheme}>
 						{
 							theme === "light" ? 
 								<Moon width={24} height={24} color="#3C3C3C"/> 

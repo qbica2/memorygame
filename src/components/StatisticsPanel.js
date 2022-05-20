@@ -59,7 +59,7 @@ function StatisticsPanel() {
 	} , [statistics]);
 
 	return (
-		<div className={`${style.container} ${isStatisticsOpen ? style.open : ""} ${theme ==="dark" && style.dark}`}>
+		<div className={`${style.container} ${isStatisticsOpen ? style.open : ""} ${theme ==="dark" ? style.dark : ""}`}>
 			<header>Statistics</header>
 			<main>
 				<section>

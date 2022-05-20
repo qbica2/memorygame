@@ -56,7 +56,7 @@ function CardList() {
 
 	return (
 		<div className={`${style.container} ${gameDifficulty === "hard" && style.hard } ${gameDifficulty === "medium" && style.medium} 
-		${gameDifficulty === "easy" && style.easy} ${theme ==="dark" && style.dark}`}>
+		${gameDifficulty === "easy" && style.easy} ${theme ==="dark" ? style.dark : ""}`}>
 			{	
 				cardList.map((card,index) =>(
 					<Card key={index} id={index} image={card.image} name={card.name} handleChoice={handleChoice} flipped={card === choiceOne || card === choiceTwo || card.status} card={card}/>
