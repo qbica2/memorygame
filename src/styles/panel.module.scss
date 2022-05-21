@@ -135,43 +135,11 @@
 
 @media screen and (max-width: 600px) {
 	.panel{
-		.content{
-			width: 355px;
-			.title{
-				font-size: 24px;
-				margin-bottom: 10px;
-			}
-			.gameplay{
-				margin-top: 0;
-				span{
-					font-size: 16px;
-				}
-			}
-			.difficulty{
-				margin-top: 10px;
-				.buttons{
-					flex-direction: column;
-					gap: 0;
-				}
-			}
-			.mode{
-				margin-top: 10px;
-				
-			}
-			.start{
-				margin-top: 10px;
-			}
-		}
-	}
-}
-
-@media screen and (max-height: 670px) {
-	.panel{
 		justify-content: flex-start;
 		.content{
 			margin-top: 20px;
 			width: 355px;
-			height: 550px;
+			height: auto;
 			.title{
 				font-size: 24px;
 				margin-bottom: 5px;
@@ -184,6 +152,10 @@
 			}
 			.difficulty{
 				margin-top: 5px;
+				.buttons{
+					flex-direction: column;
+					gap: 0;
+				}
 			}
 			.mode{
 				margin-top: 5px;
@@ -191,7 +163,39 @@
 			}
 			.start{
 				margin-top: 5px;
+				margin-bottom: 5px;
 			}
 		}
 	}
 }
+
+// @media screen and (max-height: 670px) {
+// 	.panel{
+// 		justify-content: flex-start;
+// 		.content{
+// 			margin-top: 20px;
+// 			width: 355px;
+// 			height: 550px;
+// 			.title{
+// 				font-size: 24px;
+// 				margin-bottom: 5px;
+// 			}
+// 			.gameplay{
+// 				margin-top: 0;
+// 				span{
+// 					font-size: 16px;
+// 				}
+// 			}
+// 			.difficulty{
+// 				margin-top: 5px;
+// 			}
+// 			.mode{
+// 				margin-top: 5px;
+				
+// 			}
+// 			.start{
+// 				margin-top: 5px;
+// 			}
+// 		}
+// 	}
+// }
