@@ -26,3 +26,23 @@
 		background-color: rgba(34, 57, 75, 0.9);
 	}
 }
+
+@media screen and (max-width: 600px) {
+	.container{
+		padding-left: 10px;
+		padding-top: 10px;
+		gap: 10px;
+		&.hard{
+			width: 355px;
+			height: 527.5px;
+		}
+		&.medium{
+			width: 355px;
+			height: 441.25px;
+		}
+		&.easy{
+			width: 355px;
+			height:268.75px;
+		}
+	}
+}
