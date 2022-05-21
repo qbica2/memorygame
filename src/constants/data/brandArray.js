@@ -1,28 +1,28 @@
 import adidas from "../images/brands/adidas.png";
-import amazon from "../images/brands/amazon.png";
+import audi from "../images/brands/audi.png";
+import boss from "../images/brands/boss.png";
 import calvinklein from "../images/brands/calvinklein.png";
 import chanel from "../images/brands/chanel.png";
 import cocacola from "../images/brands/cocacola.png";
+import dominos from "../images/brands/dominos.png";
 import ebay from "../images/brands/ebay.png";
 import fedex from "../images/brands/fedex.png";
+import ferrari from "../images/brands/ferrari.png";
+import gatorade from "../images/brands/gatorade.png";
 import jaguar from "../images/brands/jaguar.png";
-import jeep from "../images/brands/jeep.png";
 import lacoste from "../images/brands/lacoste.png";
 import lays from "../images/brands/lays.png";
-import lewis from "../images/brands/lewis.jpg";
+import levis from "../images/brands/levis.png";
 import louisvuitton from "../images/brands/louisvuitton.png";
 import mcdonalds from "../images/brands/mcdonalds.png";
 import newbalance from "../images/brands/newbalance.png";
-import nike from "../images/brands/nike.png";
-import porshe from "../images/brands/porsche.png";
-import puma from "../images/brands/puma.png";
-import redbull from "../images/brands/redbull.jpg";
-import rolex from "../images/brands/rolex.jpg";
+import rayban from "../images/brands/rayban.png";
+import redbull from "../images/brands/redbull.png";
+import rolex from "../images/brands/rolex.png";
 import spotify from "../images/brands/spotify.png";
 import subway from "../images/brands/subway.png";
-import toyota from "../images/brands/toyota.png";
-import versage from "../images/brands/versage.png";
 import volvo from "../images/brands/volvo.png";
+import youtube from "../images/brands/youtube.png";
 
 
 const brandArray = [
@@ -32,8 +32,13 @@ const brandArray = [
 		status: false,
 	},
 	{
-		image: amazon,
-		name: "Amazon",
+		image: audi,
+		name: "Audi",
+		status: false,
+	},
+	{
+		image: boss,
+		name: "Boss",
 		status: false,
 	},
 	{
@@ -52,6 +57,11 @@ const brandArray = [
 		status: false,
 	},
 	{
+		image: dominos,
+		name: "Dominos",
+		status: false,
+	},
+	{
 		image: ebay,
 		name: "Ebay",
 		status: false,
@@ -62,13 +72,18 @@ const brandArray = [
 		status: false,
 	},
 	{
-		image: jaguar,
-		name: "Jaguar",
+		image: ferrari,
+		name: "Ferrari",
 		status: false,
 	},
 	{
-		image: jeep,
-		name: "Jeep",
+		image: gatorade,
+		name: "Gatorade",
+		status: false,
+	},
+	{
+		image: jaguar,
+		name: "Jaguar",
 		status: false,
 	},
 	{
@@ -82,8 +97,8 @@ const brandArray = [
 		status: false,
 	},
 	{
-		image: lewis,
-		name: "Lewis",
+		image: levis,
+		name: "Levis",
 		status: false,
 	},
 	{
@@ -102,18 +117,8 @@ const brandArray = [
 		status: false,
 	},
 	{
-		image: nike,
-		name: "Nike",
-		status: false,
-	},
-	{
-		image: porshe,
-		name: "Porshe",
-		status: false,
-	},
-	{
-		image: puma,
-		name: "Puma",
+		image: rayban,
+		name: "Ray Ban",
 		status: false,
 	},
 	{
@@ -137,21 +142,15 @@ const brandArray = [
 		status: false,
 	},
 	{
-		image: toyota,
-		name: "Toyota",
-		status: false,
-	},
-	{
-		image: versage,
-		name: "Versage",
-		status: false,
-	},
-	{
 		image: volvo,
 		name: "Volvo",
 		status: false,
+	},
+	{
+		image: youtube,
+		name: "Youtube",
+		status: false,
 	}
-	
 ];
 
 export default brandArray;
