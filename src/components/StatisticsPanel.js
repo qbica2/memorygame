@@ -1,9 +1,10 @@
+/* eslint-disable react/display-name */
 import React, { useContext, useState, useEffect}from "react";
 import GameContext from "../contexts/GameContext";
 import ThemeContext from "../contexts/ThemeContext";
 import style from "../styles/statisticsPanel.module.scss";
 
-function StatisticsPanel() {
+const StatisticsPanel= React.forwardRef((props,ref) => {
 
 	const { theme } = useContext(ThemeContext);
 
@@ -59,7 +60,7 @@ function StatisticsPanel() {
 	} , [statistics]);
 
 	return (
-		<div className={`${style.container} ${isStatisticsOpen ? style.open : ""} ${theme ==="dark" ? style.dark : ""}`}>
+		<div ref={ref} className={`${style.container} ${isStatisticsOpen ? style.open : ""} ${theme ==="dark" ? style.dark : ""}`}>
 			<header>Statistics</header>
 			<main>
 				<section>
@@ -150,6 +151,6 @@ function StatisticsPanel() {
 			</main>
 		</div>
 	);
-}
+});
 
 export default StatisticsPanel;

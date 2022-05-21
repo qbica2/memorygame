@@ -283,6 +283,8 @@ export const GameProvider = ({ children }) => {
 		statistics,
 		handleStatisticsOpen,
 		isStatisticsOpen,
+		setIsSidebarOpen,
+		setIsStatisticsOpen
 	};
 
 	return (

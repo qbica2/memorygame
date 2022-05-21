@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import React, { useContext }from "react";
 import GameContext from "../contexts/GameContext";
 import ThemeContext from "../contexts/ThemeContext";
@@ -6,13 +7,13 @@ import Github from "../constants/icons/Github";
 import Mail from "../constants/icons/Mail";
 import style from "../styles/sidebar.module.scss";
 
-function Sidebar() {
+const Sidebar = React.forwardRef((props,ref) => {
 
-	const { isSidebarOpen } = useContext(GameContext);
+	const { isSidebarOpen, } = useContext(GameContext);
 	const { theme } = useContext(ThemeContext);
 
 	return (
-		<div className={`${style.sidebar} ${isSidebarOpen ? style.open : ""} ${theme ==="dark" ? style.dark : ""}`}>
+		<div ref={ref} className={`${style.sidebar} ${isSidebarOpen ? style.open : ""} ${theme ==="dark" ? style.dark : ""}`}>
 			<div className={style.me}>
 				<img src="https://avatars.githubusercontent.com/u/88967031?s=400&u=3bdd6ef0f3547498632e9901f82915d38d27df6d&v=4" alt="me" />
 				Kubilay Akdemir
@@ -27,6 +28,6 @@ function Sidebar() {
 			</div>
 		</div>
 	);
-}
+});
 
 export default Sidebar;
