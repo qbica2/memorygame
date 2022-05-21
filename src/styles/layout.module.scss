@@ -16,6 +16,9 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		h2{
+			font-family: 'Berkshire Swash', cursive;
+		}
 		.left{
 			margin-left: 20px;
 		}
@@ -63,7 +66,7 @@
 			padding: 0 20px;
 			display: flex;
 			justify-content:space-between;
-			
+			margin: 20px 0;
 			font-size: 24px;
 		}
 	}
@@ -73,6 +76,9 @@
 	.layout{
 		.nav{
 			height: 60px;
+			h2{
+				font-size: 18px;
+			}
 		}
 		header{
 			width: 100%;
@@ -92,6 +98,7 @@
 			}
 			nav{
 				font-size: 18px;
+				margin: 5px 0;
 			}
 		}
   }

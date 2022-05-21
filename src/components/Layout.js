@@ -37,6 +37,9 @@ function Layout({children}) {
 					<button ref={sidebarButtonRef} className={theme ==="dark" ? style.dark : ""} onClick={handleSidebarOpen}><Contact size={24} color={theme === "dark" ? "#fff": "#030303" }/></button>
 					<button className={theme ==="dark" ? style.dark : ""} onClick={handleNewGame}><Start size={24} color={theme === "dark" ? "#fff": "#030303" } /></button>
 				</div>
+				{
+					isGameStarted && <h2> Memory Game</h2>
+				}
 				<div className={style.right}>
 					<button ref={statisticsButtonRef} className={theme ==="dark" ? style.dark : ""} onClick={handleStatisticsOpen}><Statistic width={36} height={24} color={theme === "dark" ? "#fff": "#030303" }/></button>
 					<button className={theme ==="dark" ? style.dark : ""} onClick={handleSetTheme}>
@@ -55,7 +58,9 @@ function Layout({children}) {
 				className={`${gameDifficulty === "hard" && style.hard } 
 				${gameDifficulty === "medium" && style.medium} 
 				${gameDifficulty === "easy" && style.easy}`}>
-				<h1>Memory Game</h1>
+				{
+					!isGameStarted && <h1>Memory Game</h1>
+				}
 				{
 					isGameStarted &&	
 					<nav>
