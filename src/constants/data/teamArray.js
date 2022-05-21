@@ -3,7 +3,7 @@ import astonvilla from "../images/teams/aston-villa.png";
 import bournemouth from "../images/teams/Bournemouth.png";
 import chelsea from "../images/teams/chelsea.png";
 import crystalpalace from "../images/teams/cry.png";
-import everton from "../images/teams/everton.jpg";
+import everton from "../images/teams/everton.png";
 import fulham from "../images/teams/fulham.png";
 import leeds from "../images/teams/leeds.png";
 import leicester from "../images/teams/leicester-city.png";
@@ -13,7 +13,6 @@ import manutd from "../images/teams/manchester-united.png";
 import middle from "../images/teams/middlesbrough.png";
 import newcastle from "../images/teams/newcastle-united.png";
 import norwich from "../images/teams/norwich.png";
-import sheffield from "../images/teams/sheffield-united.png";
 import southampton from "../images/teams/southampton.png";
 import sunderland from "../images/teams/sunderland.png";
 import swansea from "../images/teams/swansea.png";
@@ -21,6 +20,7 @@ import tottenham from "../images/teams/tottenham.png";
 import watford from "../images/teams/watford.png";
 import westbrom from "../images/teams/west-brom.png";
 import westham from "../images/teams/west-ham.png";
+import wolverhampton from "../images/teams/wolverhampton.png";
 
 
 const teamArray = [
@@ -100,11 +100,6 @@ const teamArray = [
 		status: false,
 	},
 	{
-		image: sheffield,
-		name: "Sheffield",
-		status: false,
-	},
-	{
 		image: southampton,
 		name: "Southampton",
 		status: false,
@@ -139,6 +134,11 @@ const teamArray = [
 		name: "West Ham",
 		status: false,
 	},
+	{
+		image: wolverhampton,
+		name: "Wolverhampton",
+		status: false,
+	}
 ];
 
 
