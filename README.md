@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+# Memory Game Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+* [Overview](#overview)
+* [Selection Screen](#selection-screen)
+* [Gameplay](#gameplay)
+* [Player UI Feature](#player-ui-features)
+* [Dependencies](#dependencies)
+* [Installation and Operation](#installation-and-operation)
+* [Contact](#contact)
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The Memory Game is a browser based game project that developed with React.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+You can play the game here --> [Memory Game](https://qbica-memorygame.vercel.app/)
 
-### `npm test`
+## Selection Screen
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+First you need to set the difficulty level of the game.
 
-### `npm run build`
+ - Easy (6 unique cards, 30 seconds, 3*4 grid on both Desktop and Mobile devices)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ - Medium (10 unique cards, 60 seconds, 4*5 grid on Desktop , 5\*4 grid on Mobile devices)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ - Hard (12 unique cards, 90 seconds, 4*6 grid on Desktop , 6\*4 grid on Mobile devices)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Then you can choose the type of logo you want to see and start the game. For now, there are only brand logos and England Premier League team logos options.
 
-### `npm run eject`
+![selection](./public/Mobile-selection.jpeg)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Gameplay
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Depending on the difficulty you choose, 6, 10 or 12 pairs of cards are displayed face down.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The objective of the game is to match all the pairs of cards.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+When you click on a card, it will flip over and reveal a logo.
 
-## Learn More
+ - If the card is the same as the previous card, both cards will stay face up.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+ - If the card is different from the previous card, both cards will flip back over.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+ - If you click on a card that is already face up, the game will not flip the card over.
 
-### Code Splitting
+The game ends when all the pairs of cards are matched or time runs out.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<img src="https://media.giphy.com/media/arjh1h66U6eGNF5F2R/giphy.gif" width="300" height="250" />
 
-### Analyzing the Bundle Size
+## Player UI Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+In addition to the basic game play several UI components have been implemented
+to provide the player with features to improve the overall experience.
 
-### Making a Progressive Web App
+* Move Counter - Displays the number of turns the player has taken, starting
+with one at the first turn.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+* Countdown - Countdown starts at 30, 60 or 90 seconds depending on the difficulty selected. The countdown is stopped when the player wins the game. When the countdown reaches zero, the game ends.
 
-### Advanced Configuration
+* Score -The score starts at zero , increases by 30, 40 or 50 depending on difficulty for each pair of cards matched and decreases by 5 for each turn where cards are not matched.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+* Statistics - Displays the number of games played, the number of games won, the win rate, and the high score for each difficulty.
 
-### Deployment
+* Theme - Allows the player to change the theme to dark or light.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+## Dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This app has the following dependencies
+
+ - React 18.1.0
+ - Sass 1.51.0
+
+## Installation and Operation
+
+```
+git clone https://github.com/qbica2/memorygame
+npm install
+npm start
+http://localhost:3000/	
+```
+
+## Contact
+
+ - [Github](https://github.com/qbica2)
+ - [Linkedin](https://www.linkedin.com/in/kubilay-akdemir/)
+ - [kubidik27@gmail.com](mailto:kubidik27@gmail.com)
+
+
