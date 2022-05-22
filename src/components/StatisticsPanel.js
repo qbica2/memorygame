@@ -1,5 +1,5 @@
 /* eslint-disable react/display-name */
-import React, { useContext, useState, useEffect}from "react";
+import React, { useContext, useState, useEffect }from "react";
 import GameContext from "../contexts/GameContext";
 import ThemeContext from "../contexts/ThemeContext";
 import style from "../styles/statisticsPanel.module.scss";

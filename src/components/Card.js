@@ -1,12 +1,12 @@
-import React, { useContext, useState, useEffect}from "react";
+import React, { useContext, useState, useEffect }from "react";
 import ThemeContext from "../contexts/ThemeContext";
-import style from "../styles/card.module.scss";
 import QuestionMark from "../constants/icons/QuestionMark";
 import useWindowSize from "../hooks/useWindowSize";
+import style from "../styles/card.module.scss";
 
 // eslint-disable-next-line react/prop-types
 function Card({ id, image , card , flipped, handleChoice}) {
-	
+
 	const { theme } = useContext(ThemeContext);
 	const [width] = useWindowSize();
 

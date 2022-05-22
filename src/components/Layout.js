@@ -1,5 +1,4 @@
 import React, { useContext, useRef } from "react";
-import style from "../styles/layout.module.scss";
 import GameContext from "../contexts/GameContext";
 import ThemeContext from "../contexts/ThemeContext";
 import Statistic from "../constants/icons/Statistic";
@@ -10,6 +9,7 @@ import Start from "../constants/icons/Start";
 import Sidebar from "./Sidebar";
 import StatisticsPanel from "./StatisticsPanel";
 import useOutsideClick from "../hooks/useOutsideClick";
+import style from "../styles/layout.module.scss";
 
 // eslint-disable-next-line react/prop-types
 function Layout({children}) {

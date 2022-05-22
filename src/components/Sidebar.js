@@ -1,5 +1,5 @@
 /* eslint-disable react/display-name */
-import React, { useContext }from "react";
+import React, { useContext } from "react";
 import GameContext from "../contexts/GameContext";
 import ThemeContext from "../contexts/ThemeContext";
 import Linkedin from "../constants/icons/Linkedin";

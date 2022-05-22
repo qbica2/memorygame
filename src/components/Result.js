@@ -1,4 +1,4 @@
-import React,{ useContext}  from "react";
+import React, { useContext }  from "react";
 import GameContext from "../contexts/GameContext";
 import ThemeContext from "../contexts/ThemeContext";
 import Close from "../constants/icons/Close";
@@ -8,7 +8,7 @@ function Result() {
 
 	const { gameScore, gameDifficulty, attemps,gameTime ,isSuccess , handleNewGame, handleResultClose} = useContext(GameContext);
 	const { theme } = useContext(ThemeContext);
-	
+
 	return (
 		<div className={`${style.result} ${theme ==="dark" ? style.dark : ""}`}>
 			<div className={`${style.content} ${theme ==="dark" ? style.dark : ""}`}>

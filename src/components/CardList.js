@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect} from "react";
+import React, { useContext, useState, useEffect } from "react";
 import GameContext from "../contexts/GameContext";
 import ThemeContext from "../contexts/ThemeContext";
 import Card from "./Card";
@@ -8,7 +8,7 @@ function CardList() {
 
 	const { gameDifficulty, cardList, handleMatch, handleAttempsAndScore } = useContext(GameContext);
 	const { theme } = useContext(ThemeContext);
-	
+
 	const [choiceOne, setChoiceOne] = useState(null);
 	const [choiceTwo, setChoiceTwo] = useState(null);
 
