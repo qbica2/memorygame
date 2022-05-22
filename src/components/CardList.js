@@ -8,19 +8,18 @@ function CardList() {
 
 	const { gameDifficulty, cardList, handleMatch, handleAttempsAndScore } = useContext(GameContext);
 	const { theme } = useContext(ThemeContext);
+	
 	const [choiceOne, setChoiceOne] = useState(null);
 	const [choiceTwo, setChoiceTwo] = useState(null);
 
 	useEffect(() => {
 		if (choiceOne && choiceTwo) {
 			if(choiceOne.name === choiceTwo.name){
-				console.log("You found a match!");
 				handleAttempsAndScore();
 				handleMatch(choiceOne.name);
 				reset();
 			}
 			else {
-				console.log("No match!");
 				handleAttempsAndScore();
 				setTimeout(() =>reset(), 600);
 			}
@@ -30,7 +29,6 @@ function CardList() {
 
 	const handleChoice = (card) => {
 		if(choiceOne && choiceTwo){
-			console.log("yavaş ayı");
 			return;
 		}
 		console.log(card);

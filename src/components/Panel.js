@@ -5,8 +5,11 @@ import Close from "../constants/icons/Close";
 import style from "../styles/panel.module.scss";
 
 function Panel() {
+
 	const { panelDifficulty, handleDifficultyChange, panelMode, handleModeChange, handleStart, loading, countDown, handleClosePanel } = useContext(GameContext);
+
 	const { theme } = useContext(ThemeContext);
+	
 	return (
 		<div className={`${style.panel} ${theme ==="dark" ? style.dark : ""}`}>
 			<div className={`${style.content} ${theme ==="dark" && style.dark}`}>

@@ -5,8 +5,10 @@ import Close from "../constants/icons/Close";
 import style from "../styles/result.module.scss";
 
 function Result() {
+
 	const { gameScore, gameDifficulty, attemps,gameTime ,isSuccess , handleNewGame, handleResultClose} = useContext(GameContext);
 	const { theme } = useContext(ThemeContext);
+	
 	return (
 		<div className={`${style.result} ${theme ==="dark" ? style.dark : ""}`}>
 			<div className={`${style.content} ${theme ==="dark" ? style.dark : ""}`}>

@@ -45,8 +45,6 @@ export const GameProvider = ({ children }) => {
 			const randomBrandArray = brandArray.sort(() => 0.5 - Math.random());
 			const randomTeamArray = teamArray.sort(() => 0.5 - Math.random());
 
-			console.log("interval çalışıyor");
-			console.log(countDown);
 			if(countDown === 0 ) {
 				setIsGameStarted(true);
 				setLoading(false);
@@ -110,7 +108,6 @@ export const GameProvider = ({ children }) => {
 			if(gameTime > 0){	
 				const isSuccess = cardList.every(card => card.status === true);
 				if(isSuccess) {
-					console.log("success");
 
 					const newStatistics = {
 						totalGamePlayed : statistics.totalGamePlayed + 1,
@@ -199,7 +196,6 @@ export const GameProvider = ({ children }) => {
 		setGameScore(0);
 		setAttemps(0);
 		setLoading(true);
-		console.log("starta bastın");	
 	};
 
 	const handleMatch = (name) => {

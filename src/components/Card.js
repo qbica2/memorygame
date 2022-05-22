@@ -6,6 +6,7 @@ import useWindowSize from "../hooks/useWindowSize";
 
 // eslint-disable-next-line react/prop-types
 function Card({ id, image , card , flipped, handleChoice}) {
+	
 	const { theme } = useContext(ThemeContext);
 	const [width] = useWindowSize();
 

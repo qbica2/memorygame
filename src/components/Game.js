@@ -7,7 +7,9 @@ import Default from "./Default";
 import GameContext from "../contexts/GameContext";
 
 function Game() {
+
 	const { isPanelOpen, isResultOpen, isGameStarted } = useContext(GameContext);
+	
 	return (
 		<>
 			<Layout>	
